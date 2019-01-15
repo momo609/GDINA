@@ -1,0 +1,9 @@
+pandoc: 1.19.2.1
+pkgdown: 1.1.0
+pkgdown_sha: ~
+articles:
+  GDINA: GDINA.html
+  GDINA_example: OnlineExercises/GDINA_example.html
+  HOGDINA_example: OnlineExercises/HOGDINA_example.html
+  LCDM_example: OnlineExercises/LCDM_example.html
+
