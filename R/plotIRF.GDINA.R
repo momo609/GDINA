@@ -88,6 +88,7 @@ plot.GDINA <-
 
       }
     }else if(tolower(what)=="mp"){
+      print("123")
       df <- personparm(x,"mp")
       if(is.null(att.names)){
         att.names <- colnames(df)
@@ -98,10 +99,13 @@ plot.GDINA <-
 
       if(np>1){
         dff <- c(t(df[person,]))
+        cat("123")
         dat <- data.frame(att = rep(att.names,np),mp = dff,person = factor(rep(person,each = ncol(df))))
+        write.table(dat, "C:\\Users\\admin\\Desktop\\result.csv", col.names=T, sep=",")
+        view(dat)
         print(ggplot2::ggplot(data = dat, ggplot2::aes_string(x = "att", y = "mp")) +
                 geom_bar(stat = "identity", position = "dodge",ggplot2::aes_string(fill = "person")) +
-                ylim(0,1)+ geom_text(aes(label = paste( dff),colour = "black", vjust=00))+
+                ylim(0,1)+ geom_text(aes(label = paste(dff),colour = "black", vjust=00))+
                 labs(x = "Attributes", y = "Mastery probabilities",
                      title = paste("Mastery probabilities")))
       }else{
